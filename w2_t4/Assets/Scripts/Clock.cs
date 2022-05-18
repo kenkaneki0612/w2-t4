@@ -18,12 +18,14 @@ public class Clock : MonoBehaviour
     private void Awake()
     {
         DateTime time = DateTime.Now;
+        TimeSpan timechange = new System.TimeSpan(addhour, 0, 0);
+        DateTime setTime = time.Add(timechange);
 
-        hoursTransform.localRotation = Quaternion.Euler(0f, time.Hour * degreesPerHour, 0f);
+        hoursTransform.localRotation = Quaternion.Euler(0f, setTime.Hour * degreesPerHour, 0f);
 
-        minutesTransform.localRotation = Quaternion.Euler(0f, time.Minute * degreesPerMinute, 0f);
+        minutesTransform.localRotation = Quaternion.Euler(0f, setTime.Minute * degreesPerMinute, 0f);
 
-        secondsTransform.localRotation = Quaternion.Euler(0f, time.Second * degreesPerSecond, 0f);
+        secondsTransform.localRotation = Quaternion.Euler(0f, setTime.Second * degreesPerSecond, 0f);
     }
 
     private void Update()
@@ -52,11 +54,13 @@ public class Clock : MonoBehaviour
     void UpdateDiscription()
     {
         DateTime time = DateTime.Now;
+        TimeSpan timechange = new System.TimeSpan(addhour, 0, 0);
+        DateTime setTime = time.Add(timechange);
 
-        hoursTransform.localRotation = Quaternion.Euler(0f, time.Hour * degreesPerHour, 0f);
+        hoursTransform.localRotation = Quaternion.Euler(0f, setTime.Hour * degreesPerHour, 0f);
 
-        minutesTransform.localRotation = Quaternion.Euler(0f, time.Minute * degreesPerMinute, 0f);
+        minutesTransform.localRotation = Quaternion.Euler(0f, setTime.Minute * degreesPerMinute, 0f);
 
-        secondsTransform.localRotation = Quaternion.Euler(0f, time.Second * degreesPerSecond, 0f);
+        secondsTransform.localRotation = Quaternion.Euler(0f, setTime.Second * degreesPerSecond, 0f);
     }
 }
