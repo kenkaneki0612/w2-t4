@@ -5,15 +5,16 @@ using System;
 
 public class Clock : MonoBehaviour
 {
+    [SerializeField] private int addhour;
+
     const float degreesPerHour = 30f;
     const float degreesPerMinute = 6f;
     const float degreesPerSecond = 6f;
 
     public Transform hoursTransform, minutesTransform, secondsTransform;
 
-    public bool continuous;
+    public bool twirl;
 
-    //improve_move_feature
     private void Awake()
     {
         DateTime time = DateTime.Now;
@@ -27,7 +28,7 @@ public class Clock : MonoBehaviour
 
     private void Update()
     {
-        if (continuous)
+        if (twirl)
         {
             UpdateContinuous();
         }
